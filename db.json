@@ -1,0 +1,59 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Stephen Leow",
+      "age": 23,
+      "address": {
+        "street": "Jalan 1/155a",
+        "city": "Bukit Jalil",
+        "postcode": "57000"
+      },
+      "course": "Computer Science (Computer Network and Security)"
+    },
+    {
+      "id": 2,
+      "name": "David Lai",
+      "age": 22,
+      "address": {
+        "street": "Jalan Puj 9/10",
+        "city": "Pucak Jalil",
+        "postcode": "43300"
+      },
+      "course": "Computer Science (Software Engineering)"
+    },
+    {
+      "id": 3,
+      "name": "Kevin Wong",
+      "age": 25,
+      "address": {
+        "street": "Jalan Taman tas 30",
+        "city": "Kuantan",
+        "postcode": "25150"
+      },
+      "course": "Computer Science (Artificial Intelligence)"
+    },
+    {
+      "id": 4,
+      "name": "Janice Tan",
+      "age": 19,
+      "address": {
+        "street": "Jalan Ketari 28",
+        "city": "Bentong",
+        "postcode": "28700"
+      },
+      "course": "Dental Surgery"
+    },
+    {
+      "id": 5,
+      "name": "Sam Tung Woey",
+      "age": 18,
+      "address": {
+        "street": "Jalan Indera Mahkota 999",
+        "city": "Kuantan",
+        "postcode": "25200"
+      },
+      "course": "Law"
+    }
+  ]
+}
