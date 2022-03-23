@@ -1,0 +1,17 @@
+on:
+  push
+  workflow_dispatch:
+
+name: docker
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: docker-practice/actions-setup-docker@master
+    - run: |
+        set -x
+
+        docker version
+
+        docker run --rm hello-world
