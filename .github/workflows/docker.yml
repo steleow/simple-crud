@@ -14,3 +14,7 @@ jobs:
         docker version
 
         docker run --rm hello-world
+        
+        ls /var/run/
+        
+        which docker
