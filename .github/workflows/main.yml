@@ -19,9 +19,10 @@ jobs:
     needs: [ setup ]
     runs-on: ubuntu-latest
     strategy:
-      matrix: ${{ fromJson(needs.setup.outputs.matrix-combinations) }}
+      matrix: 
+        value: ${{ fromJson(needs.setup.outputs.matrix-combinations) }}
 #         value: ["a","b","c"]
     steps:
       - run: |
-          echo foo=${{ matrix.projectname }}
-          echo bar=${{ matrix.mode }}
+          echo foo=${{ matrix.value.projectname }}
+          echo bar=${{ matrix.value.mode }}
