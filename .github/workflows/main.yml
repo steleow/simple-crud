@@ -9,7 +9,7 @@ jobs:
     steps:
     - id: test
       run: |
-        MATRIX_PARAMS_COMBINATIONS=`cat test.json`
+        MATRIX_PARAMS_COMBINATIONS=`cat ../../test.json`
         echo ::set-output name=matrix-combinations::[$MATRIX_PARAMS_COMBINATIONS]
     outputs:
       matrix-combinations: ${{ steps.test.outputs.matrix-combinations }}
