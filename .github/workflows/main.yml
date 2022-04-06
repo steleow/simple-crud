@@ -7,8 +7,10 @@ jobs:
   setup:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
     - id: test
       run: |
+        ls
         MATRIX_PARAMS_COMBINATIONS=`cat ../../test.json`
         echo ::set-output name=matrix-combinations::[$MATRIX_PARAMS_COMBINATIONS]
     outputs:
