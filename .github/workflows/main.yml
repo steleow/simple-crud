@@ -11,18 +11,18 @@ jobs:
       run: echo '::set-output name=value1::[\"a\", \"b\", \"c\"]'
     outputs:
       test: ${{ steps.test.outputs.value1 }}
-  echo1:
-    needs: [ setup ]
-    runs-on: ubuntu-latest
-    steps:
-    - run: echo ${{ needs.setup.outputs.test }}
+#   echo1:
+#     needs: [ setup ]
+#     runs-on: ubuntu-latest
+#     steps:
+#     - run: echo ${{ needs.setup.outputs.test }}
   build:
-    needs: [ echo1 ]
+    needs: [ setup ]
     runs-on: ubuntu-latest
     strategy:
       matrix:
-#         value: ${{ needs.setup.outputs.test }}
-        value: ["a","b","c"]
+        value: ${{ needs.setup.outputs.test }}
+#         value: ["a","b","c"]
     steps:
       - run: |
           echo "${{ matrix.value }}"
