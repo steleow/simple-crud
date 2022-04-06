@@ -15,13 +15,13 @@ jobs:
     needs: [ setup ]
     runs-on: ubuntu-latest
     steps:
-    - run: echo ${{ jobs.setup.outputs.test }}
+    - run: echo ${{ setup.outputs.test }}
   build:
     needs: [ echo1 ]
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        value: ${{ jobs.setup.outputs.test }}
+        value: ${{ setup.outputs.test }}
     steps:
       - run: |
           echo "${{ matrix.value }}"
