@@ -1,16 +1,17 @@
 {
     [
-        "test": {
-            "foo": "foo-1",
-            "bar": "bar-1"
+        "teamA": {
+            "projectname": "foo-1",
+            "mode": "bar-1",
+            
         },
-        "test2": {
-            "foo": "foo-1",
-            "bar": "bar-2"
+        "teamB": {
+            "projectname": "foo-2",
+            "mode": "bar-2",
         },
-        "test3": {
-            "foo": "foo-2",
-            "bar": "bar-1"
+        "teamC": {
+            "projectname": "foo-3",
+            "mode": "bar-3",
         }
     ]
 }
