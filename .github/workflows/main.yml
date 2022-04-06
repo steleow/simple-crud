@@ -12,8 +12,13 @@ jobs:
           echo '::set-output name=value::[\"a\", \"b\", \"c\"]'
     outputs:
       matrix: ${{ steps.matrix.outputs.value }}
-  build:
+  test:
     needs: [ setup ]
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo ${{ steps.matrix.outputs.value }}
+  build:
+    needs: [ test ]
     runs-on: ubuntu-latest
     strategy:
       matrix:
