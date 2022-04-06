@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        value: ${{ setup.outputs.test }}
+        value: ${{ needs.setup.outputs.test }}
     steps:
       - run: |
           echo "${{ matrix.value }}"
