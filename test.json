@@ -1,0 +1,16 @@
+{
+    [
+        test: {
+            "foo": "foo-1",
+            "bar": "bar-1"
+        },
+        test2: {
+            "foo": "foo-1",
+            "bar": "bar-2"
+        },
+        test3: {
+            "foo": "foo-2",
+            "bar": "bar-1"
+        }
+    ]
+}
