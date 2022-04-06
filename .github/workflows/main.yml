@@ -11,8 +11,8 @@ jobs:
     - id: test
       run: |
         MATRIX_PARAMS_COMBINATIONS=`cat test.json`
-        echo ::set-output name=matrix-combinations::[$MATRIX_PARAMS_COMBINATIONS]
-        echo [$MATRIX_PARAMS_COMBINATIONS]
+        echo ::set-output name=matrix-combinations::${MATRIX_PARAMS_COMBINATIONS//'%'/'%25'}
+        echo $MATRIX_PARAMS_COMBINATIONS
     outputs:
       matrix-combinations: ${{ steps.test.outputs.matrix-combinations }}
   build:
