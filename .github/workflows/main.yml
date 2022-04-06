@@ -8,16 +8,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - id: test
-      run: echo '::set-output name=value::[\"a\", \"b\", \"c\"]'
+      run: echo '::set-output name=value1::[\"a\", \"b\", \"c\"]'
     outputs:
-      test: ${{ steps.test.outputs.value }}
-  test:
+      test: ${{ steps.test.outputs.value1 }}
+  echo1:
     needs: [ setup ]
     runs-on: ubuntu-latest
     steps:
-    - run: echo ${{ steps.test.outputs.value }}
+    - run: echo ${{ steps.setup.outputs.value1 }}
   build:
-    needs: [ test ]
+    needs: [ echo1 ]
     runs-on: ubuntu-latest
     strategy:
       matrix:
