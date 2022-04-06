@@ -19,8 +19,7 @@ jobs:
     needs: [ setup ]
     runs-on: ubuntu-latest
     strategy:
-      matrix: 
-        value: ${{ fromJson(needs.setup.outputs.matrix-combinations) }}
+      matrix: ${{ fromJson(needs.setup.outputs.matrix-combinations) }}
 #         value: ["a","b","c"]
     steps:
       - run: |
