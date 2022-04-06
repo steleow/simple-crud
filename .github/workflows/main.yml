@@ -8,7 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - id: test
-      run: echo '::set-output name=value1::[\"a\", \"b\", \"c\"]'
+      run: |
+        MATRIX_PARAMS_COMBINATIONS='
+              {"foo": "foo-1", "bar": "bar-1"},
+              {"foo": "foo-1", "bar": "bar-2"},
+              {"foo": "foo-2", "bar": "bar-1"},
+          '
+        echo ::set-output name=value1::[$MATRIX_PARAMS_COMBINATIONS]
     outputs:
       test: ${{ steps.test.outputs.value1 }}
 #   echo1:
@@ -20,9 +26,9 @@ jobs:
     needs: [ setup ]
     runs-on: ubuntu-latest
     strategy:
-      matrix:
-        value: ${{ needs.setup.outputs.test }}
+      matrix: ${{ fromJson(needs.setup.outputs.test) }}
 #         value: ["a","b","c"]
     steps:
       - run: |
-          echo "${{ matrix.value }}"
+          echo foo=${{ matrix.foo }}
+          echo bar=${{ matrix.bar }}
