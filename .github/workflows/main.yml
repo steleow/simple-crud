@@ -15,7 +15,7 @@ jobs:
     needs: [ setup ]
     runs-on: ubuntu-latest
     steps:
-    - run: echo ${{ setup.outputs.test }}
+    - run: echo ${{ needs.setup.outputs.test }}
   build:
     needs: [ echo1 ]
     runs-on: ubuntu-latest
