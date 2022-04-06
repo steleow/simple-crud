@@ -9,11 +9,12 @@ jobs:
     steps:
     - id: test
       run: |
-        MATRIX_PARAMS_COMBINATIONS='
-              {"foo": "foo-1", "bar": "bar-1"},
-              {"foo": "foo-1", "bar": "bar-2"},
-              {"foo": "foo-2", "bar": "bar-1"},
-          '
+#        MATRIX_PARAMS_COMBINATIONS='
+#              {"foo": "foo-1", "bar": "bar-1"},
+#              {"foo": "foo-1", "bar": "bar-2"},
+#              {"foo": "foo-2", "bar": "bar-1"},
+#          '
+        MATRIX_PARAMS_COMBINATIONS=`cat test.json`
         echo ::set-output name=matrix-combinations::[$MATRIX_PARAMS_COMBINATIONS]
     outputs:
       matrix-combinations: ${{ steps.test.outputs.matrix-combinations }}
