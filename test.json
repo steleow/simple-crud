@@ -1,17 +1,15 @@
 {
     [
-        "teamA": {
-            "projectname": "foo-1",
-            "mode": "bar-1",
-            
-        },
-        "teamB": {
-            "projectname": "foo-2",
-            "mode": "bar-2",
-        },
-        "teamC": {
-            "projectname": "foo-3",
-            "mode": "bar-3",
-        }
+      {
+          "projectname": "foo-1",
+          "mode": "bar-1",
+
+      }, {
+          "projectname": "foo-2",
+          "mode": "bar-2",
+      }, {
+          "projectname": "foo-3",
+          "mode": "bar-3",
+      }
     ]
 }
