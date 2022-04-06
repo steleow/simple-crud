@@ -14,19 +14,14 @@ jobs:
               {"foo": "foo-1", "bar": "bar-2"},
               {"foo": "foo-2", "bar": "bar-1"},
           '
-        echo ::set-output name=value1::[$MATRIX_PARAMS_COMBINATIONS]
+        echo ::set-output name=matrix-combinations::[$MATRIX_PARAMS_COMBINATIONS]
     outputs:
-      test: ${{ steps.test.outputs.value1 }}
-#   echo1:
-#     needs: [ setup ]
-#     runs-on: ubuntu-latest
-#     steps:
-#     - run: echo ${{ needs.setup.outputs.test }}
+      matrix-combinations: ${{ steps.test.outputs.matrix-combinations }}
   build:
     needs: [ setup ]
     runs-on: ubuntu-latest
     strategy:
-      matrix: ${{ fromJson(needs.setup.outputs.test) }}
+      matrix: ${{ fromJson(needs.setup.outputs.matrix-combinations) }}
 #         value: ["a","b","c"]
     steps:
       - run: |
