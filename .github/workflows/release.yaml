@@ -10,6 +10,7 @@ jobs:
         uses: actions/checkout@v3
       - name: Create Release Notes
         uses: actions/github-script@v4.0.2
+        if: startsWith(github.ref, 'refs/tags/')
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
