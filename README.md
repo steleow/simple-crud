@@ -1,4 +1,4 @@
-## Getting Started ##
+### Getting Started ###
 
 ### Please follow the steps:
 
